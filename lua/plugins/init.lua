@@ -28,15 +28,6 @@ return {
       },
     },
   },
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-    config = function()
-      vim.keymap.set("i", "<C-o>", function()
-        return vim.fn["codeium#Complete"]()
-      end, { expr = true, silent = true })
-    end,
-  },
   { "mg979/vim-visual-multi" },
   {
     "iamcco/markdown-preview.nvim",

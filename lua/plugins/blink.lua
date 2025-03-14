@@ -1,13 +1,29 @@
 return {
   {
-    "saghen/blink.cmp",
+    "Saghen/blink.cmp",
     optional = true,
-    dependencies = {
-      "Kaiser-Yang/blink-cmp-avante",
-      -- ... Other dependencies
-    },
     opts = {
+      keymap = {
+        preset = "enter",
+        ["<C-o>"] = { "show" },
+        ["<Tab>"] = {
+          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
+          "fallback",
+        },
+      },
+      completion = {
+        menu = {
+          draw = {
+            columns = {
+              { "label", "label_description", gap = 1 },
+              { "kind_icon", "source_name" },
+            },
+            treesitter = {},
+          },
+        },
+      },
       sources = {
+        compat = {},
         -- Add 'avante' to the list
         default = { "avante", "lsp", "path", "buffer" },
         providers = {
@@ -20,6 +36,9 @@ return {
           },
         },
       },
+    },
+    dependencies = {
+      "Kaiser-Yang/blink-cmp-avante",
     },
   },
 }
