@@ -18,7 +18,7 @@ return {
               { "label", "label_description", gap = 1 },
               { "kind_icon", "source_name" },
             },
-            treesitter = {},
+            treesitter = { "lsp" },
           },
         },
       },
